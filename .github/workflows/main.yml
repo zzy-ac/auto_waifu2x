@@ -15,6 +15,8 @@ jobs:
     - name: Make Time log #Api调用
       run: | 
         sudo apt install docker -y
+        docker pull redpeacock78/waifu2x
+        docker run --rm -it -v /home/zzy/waifu2x:/work redpeacock78/waifu2x -p 0 -m noise-scale --scale-ratio 2 --noise-level 2 -i avatar.png -o cov_avatar.png
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log     
     - name: Commit #上传新的refresh_token到仓库
       run: |

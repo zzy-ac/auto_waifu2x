@@ -14,8 +14,7 @@ jobs:
       uses: actions/checkout@master
     - name: Make Time log #Api调用
       run: | 
-        apt update |apt upgrade 
-        apt install docker
+        apt install docker -y
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log     
     - name: Commit #上传新的refresh_token到仓库
       run: |
